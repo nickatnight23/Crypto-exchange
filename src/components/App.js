@@ -9,6 +9,8 @@ import { loadProvider,
   loadExchange
 }  from '../store/interactions';
 
+import Navbar from './Navbar';
+
  
 
 
@@ -25,9 +27,17 @@ function App() {
     // Connect Ethers to blockchain
     const provider = loadProvider(dispatch)
     // Fetch current network's chainId(e.g hardhat:31337, kovan:42)
-    const chainId = await loadNetwork(provider, dispatch)
+
+    // Reload page when network changes
+    window.ethereum.on('chainChanged', () => {
+      window.location.reload()
+    })
+   
     // Fetch current account and balance from Metamask
-    await loadAccount(provider,dispatch)
+    const chainId = await loadNetwork(provider, dispatch)
+    window.ethereum.on('accountsChanged', () => {
+       loadAccount(provider,dispatch)
+    })
     // Load token smart contracts
     const DApp = config[chainId].DApp
     const mETH = config[chainId].mETH
@@ -45,7 +55,7 @@ function App() {
   return (
     <div>
 
-      {/* Navbar */}
+      <Navbar />
 
       <main className='exchange grid'>
         <section className='exchange__section--left grid'>
