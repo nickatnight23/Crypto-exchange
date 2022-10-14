@@ -1,8 +1,13 @@
-# Sample Hardhat Project
+#  DECENTRALIZED CRYPTO EXCHANGE
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Hardhat Crypto Exchange where users can buy and trade crypto currency
 
-Try running some of the following tasks:
+# Getting Started
+
+Requirements
+- Node.js
+- Hardhat
+- npm
 
 ```shell
 npx hardhat help

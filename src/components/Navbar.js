@@ -42,7 +42,7 @@ const Navbar = () => {
               <select name="networks" id="networks" value={config[chainId] ? `0x${chainId.toString(16)}` : `0`} onChange={networkHandler}>
               <option value="0">Select Network</option>
               <option value="0x7A69">Local Host</option>
-              <option value="0x2a">Kovan</option>
+              <option value="0x5">Goerli</option>
             </select>
             )}
           
