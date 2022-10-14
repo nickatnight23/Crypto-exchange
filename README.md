@@ -18,6 +18,7 @@ npm install
 
 ## Usage
 Deploy:
+
 If you are using localhost you are going to run a local node using hardhat
 ```
 npx hardhat node
